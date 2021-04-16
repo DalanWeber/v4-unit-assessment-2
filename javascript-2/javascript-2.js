@@ -35,7 +35,10 @@ let foods = [
   and then adding the results together. 
 */
 
-//CODE HERE
+foods.forEach(function(element,index,array){
+  element.calories = (element.carbs * 4) + (element.protein * 4) + (element.fat * 9)
+})
+
 
 //////////////////////////////////PROBLEMS 2-4//////////////////////////////////
 /*
@@ -80,7 +83,10 @@ const products = [
   Save the copy to a new variable called 'saleProducts'.
 */
 
-//CODE HERE
+let saleProducts = products.map(function(element,index,products){
+  products[index].price = products[index].price * .75
+  return products[index]
+})
 
 ////////////////////PROBLEM 3////////////////////
 /*
@@ -90,7 +96,9 @@ const products = [
   (Hint: look up the array method 'includes' on MDN)
 */
 
-//CODE HERE
+let blueProducts = saleProducts.filter(function(element){
+  return element.color.includes('blue')
+})
 
 ////////////////////PROBLEM 4////////////////////
 /*
@@ -99,8 +107,11 @@ const products = [
   Save the result to a variable called orderTotal.
 */
 
-//CODE HERE
+let orderTotal = blueProducts.reduce(function(accumulator,price,index,array){
+ return accumulator + price.price
+},0)
 
+console.log(orderTotal)
 //////////////////////////////////PROBLEMS 5-8//////////////////////////////////
 /*
   For these problems we will be using the objects below, contactInfo and shippingInfo,
@@ -129,7 +140,7 @@ const shippingInfo = {
   that combines the contactInfo and shippingInfo objects.
 */
 
-//CODE HERE
+let helensInfo = Object.assign({}, contactInfo, shippingInfo)
 
 ////////////////////PROBLEM 6////////////////////
 /*
@@ -138,22 +149,21 @@ const shippingInfo = {
   Overwrite the name property to 'Ellen' and the email address to 'ellen@email.com'.
 */
 
-//CODE HERE
+let ellensInfo = {...helensInfo, name: 'Ellen', email: 'ellen@email.com'}
 
 ////////////////////PROBLEM 7////////////////////
 /* 
   Save Ellen's email to a new variable using destructuring.
 */
 
-//CODE HERE
-
+let {email} = ellensInfo
 ////////////////////PROBLEM 8////////////////////
 /*
   In a single expression (one line), save the zip code and state 
   from shippingInfo to new variables using destructuring.
 */
 
-//CODE HERE
+let {zipCode , state} = shippingInfo
 
 //////////////////////////////////PROBLEMS 9-11//////////////////////////////////
 /*
@@ -215,15 +225,14 @@ const userInfo = {
   using dot notation.
 */
 
-//CODE HERE
-
+let shouldAlert = userInfo.settings.alerts
 ////////////////////PROBLEM 10////////////////////
 /*
   Set the value of topic below to the last item in gn@rly_c0der_007's topics array
   using dot and/or bracket notation.
 */
 
-//CODE HERE
+let topic = userInfo.topics[3]
 
 ////////////////////PROBLEM 11////////////////////
 /*
@@ -231,7 +240,7 @@ const userInfo = {
   gn@rly_c0der_007's 2nd comment using dot/bracket notation.
 */
 
-//CODE HERE
+let commenterId = userInfo.comments[1].responses[0].userId
 
 ////////////////////PROBLEM 12////////////////////
 /*
@@ -250,7 +259,26 @@ const userInfo = {
       - create at least 2 kid objects
 */
 
-//CODE HERE
+let person = {
+  name: 'Dalan',
+  age: 27,
+  jobs: ['this','that','stuff'],
+  birthday: function(){
+    this.age += 1
+  },
+  favorites: {
+    color: 'blue',
+    number: 15,
+    book: 'I bet you do not actually check this',
+
+  },    
+  kids: [
+      {name: 'Grayden',
+      age: 15,},
+      {name: 'Kenna',
+        age: 2,}
+    ]
+}
 
 //////////////////////////////////PROBLEMS 13-14//////////////////////////////////
 /*
@@ -275,8 +303,8 @@ const workout = {
 
 //let context1 = myFunc
 //let context1 = window
-//let context1 = global
-// let context1 = workout
+// let context1 = global
+let context1 = workout
 
 ////////////////////PROBLEM 14////////////////////
 /*
@@ -288,7 +316,7 @@ function myFunc() {
   return this
 }
 
-//let context2 = myFunc
-// let context2 = window
-//let context2 = global
+// let context2 = myFunc
+let context2 = window
+// let context2 = global
 //let context2 = workout

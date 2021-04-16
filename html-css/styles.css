@@ -12,3 +12,131 @@ the font is called 'nunito' and can be found on google fonts
 ***you can use it if you'd like or you can choose your own***
 
 */
+body{
+    height: 100vh-5px;
+    width: 100%;
+    margin: 0;
+    font-family: nunito;
+}
+h1{
+    font-size: 300%;
+}
+
+header {
+    background-color: black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    height: 75px;
+    z-index: 100;
+    overflow: hidden
+}
+
+.devmtndaily {
+    color: steelblue;
+    margin: 20px;
+    flex-grow: 3;
+}
+
+.rightnav{
+    color: white;
+    display: inline-flex;
+    justify-content: space-around;
+    flex-grow: 1;
+    
+}
+nav {
+    display: inline-flex;
+    justify-content: space-around;
+    flex-grow: 1;
+}
+.mainbody{
+    margin: 0;
+    padding-left: 75px;
+    padding-right: 75px;
+    width: 100% -10px;
+    height: 100%-75px;
+    top: 75px;
+    position: relative;
+    display: flex;
+}
+
+.lotsoftext{
+    margin: 20px;
+    flex-grow: 3;
+}
+
+.rightprofile{
+    flex-grow: 1;
+    margin: 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.profilepic{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 3px 3px 7px 8px rgba(0,0,0,0.33); 
+    box-shadow: 3px 3px 7px 8px rgba(0,0,0,0.33);
+    background-color: white;
+}
+
+.popularart{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+    align-items: center;
+    justify-content: center;
+    -webkit-box-shadow: 3px 3px 7px 8px rgba(0,0,0,0.33); 
+    box-shadow: 3px 3px 7px 8px rgba(0,0,0,0.33);
+    background-color: white;
+}
+
+.li {
+    margin: 5px;
+}
+
+h5{
+    color: blue;
+    float: right;
+}
+
+.imagecontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+    
+}
+
+img{
+    height: 250px;
+    margin: 25px;
+}
+
+footer{
+    margin-top: 50px;
+    background-color: steelblue;
+    height: 45px;
+    padding-left: 10px; 
+    padding-bottom: 15px;
+    padding-top: 1px;
+}
+
+.theqmark{
+    position: fixed;
+    height: 45px;
+    bottom: -15px;
+    right: -15px;
+}
